@@ -2,24 +2,20 @@ name: CI & CD
 
 on:
   push:
-    branches: [ "main" ]
-  workflow_dispatch:    
+    branches: [ "main" ] 
 
 jobs:
-  pass-secrets-to-workflow:
+  call-workflow:
     uses: marudengi/auth-api/.github/workflows/main.yml@main
-    secrets: inherit 
-    
+    secrets:
+      ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }}
+      
   push_to_registry:
-    
     runs-on: ubuntu-18.04
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
         
-      - name: Call secrets
-        
-      
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
         
