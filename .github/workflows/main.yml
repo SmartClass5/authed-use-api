@@ -2,19 +2,9 @@ name: CI & CD
 
 on:
   push:
-    branches: [ "main" ] 
-  workflow_call:
-    secrets:
-      ECR_REGISTRY:
-        required: true
-      
+    branches: [ "main" ]       
   
-jobs:
-  call-workflow:
-    uses: marudengi/auth-api/.github/workflows/main.yml@main
-    secrets:
-      ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }}
-      
+jobs:      
   push_to_registry:
     runs-on: ubuntu-18.04
     steps:
