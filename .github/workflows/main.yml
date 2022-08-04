@@ -4,6 +4,10 @@ on:
   push:
     branches: [ "main" ] 
   workflow_call:
+    secrets:
+      ECR_REGISTRY:
+        required: true
+      
   
 jobs:
   call-workflow:
