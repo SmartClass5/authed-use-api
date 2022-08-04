@@ -3,7 +3,8 @@ name: CI & CD
 on:
   push:
     branches: [ "main" ] 
-
+  workflow_call:
+  
 jobs:
   call-workflow:
     uses: marudengi/auth-api/.github/workflows/main.yml@main
