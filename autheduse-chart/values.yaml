@@ -11,7 +11,7 @@ replicas:
   revisionHistoryLimit: 0
 
 image:
-  version: main-532a5ac
+  version: main-db9d08e
   repository: 142373294051.dkr.ecr.us-east-1.amazonaws.com/authed-use
   pullPolicy: IfNotPresent
 
